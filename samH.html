@@ -1,0 +1,416 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Samuel Yitayal - Football Journey</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #07110d;
+    color: #f5f8f4;
+    line-height: 1.7;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 20px 8%;
+    border-bottom: 1px solid #293a2d;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #b8ff60;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+nav a:hover {
+    color: #b8ff60;
+}
+
+.hero {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 60px 8%;
+    background: radial-gradient(
+        ellipse at 80% 30%,
+        #20432a,
+        #07110d 65%
+    );
+}
+
+.hero-text {
+    max-width: 600px;
+}
+
+.tag {
+    color: #b8ff60;
+    font-size: 13px;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: clamp(42px, 7vw, 76px);
+    line-height: 1.1;
+    margin: 20px 0;
+}
+
+h1 span {
+    color: #b8ff60;
+}
+
+.hero p {
+    color: #aab8ad;
+    margin-bottom: 25px;
+}
+
+.btn {
+    display: inline-block;
+    background: #b8ff60;
+    color: #07110d;
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.hero-image {
+    width: 40%;
+    max-width: 400px;
+}
+
+.hero-image img {
+    display: block;
+    width: 100%;
+    max-height: 500px;
+    object-fit: contain;
+    border: 2px solid #b8ff60;
+    border-radius: 15px;
+}
+
+section {
+    padding: 70px 8%;
+}
+
+.section-title {
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    color: #aab8ad;
+    margin-bottom: 30px;
+}
+
+.about {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.card {
+    background: #111e17;
+    border: 1px solid #293a2d;
+    border-radius: 12px;
+    padding: 25px;
+}
+
+.card h3 {
+    color: #b8ff60;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #aab8ad;
+}
+
+/* PHOTO GALLERY */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 420px;
+    display: block;
+    object-fit: contain;
+    object-position: center;
+    background: #111e17;
+    border: 1px solid #293a2d;
+    border-radius: 14px;
+    padding: 5px;
+    transition: 0.3s;
+}
+
+.gallery img:hover {
+    border-color: #b8ff60;
+    transform: translateY(-5px);
+}
+
+.message {
+    max-width: 850px;
+    margin: auto;
+    text-align: center;
+    padding: 45px 25px;
+    background: linear-gradient(135deg, #172b1c, #0a130d);
+    border: 1px solid #324a30;
+    border-radius: 20px;
+}
+
+.message h2 {
+    color: #b8ff60;
+    font-size: clamp(27px, 4vw, 40px);
+    margin: 15px 0 20px;
+}
+
+.message p {
+    color: #d6e0d6;
+    font-size: 17px;
+}
+
+.signature {
+    color: #b8ff60;
+    font-weight: bold;
+    margin-top: 25px;
+}
+
+footer {
+    text-align: center;
+    padding: 30px 15px;
+    border-top: 1px solid #293a2d;
+    color: #aab8ad;
+}
+
+footer span {
+    color: #b8ff60;
+}
+
+/* TABLETS */
+
+@media (max-width: 900px) {
+    .gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
+    }
+
+    .gallery img {
+        height: 360px;
+    }
+}
+
+/* MOBILE PHONES */
+
+@media (max-width: 600px) {
+    nav {
+        padding: 18px 5%;
+    }
+
+    nav a {
+        margin-left: 0;
+        margin-right: 12px;
+        font-size: 13px;
+    }
+
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 45px 6%;
+    }
+
+    .hero-image {
+        width: 80%;
+        max-width: 350px;
+    }
+
+    .hero p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    section {
+        padding: 50px 6%;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .gallery img {
+        height: auto;
+        aspect-ratio: 3 / 4;
+        max-height: 600px;
+        object-fit: contain;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">SY. FOOTBALL</div>
+    <div>
+        <a href="#about">About</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#message">Message</a>
+    </div>
+</nav>
+
+<header class="hero">
+    <div class="hero-text">
+        <div class="tag">THE JOURNEY • THE DREAM • THE FUTURE</div>
+
+        <h1>Samuel<br><span>Yitayal.</span></h1>
+
+        <p>
+            A passion for football, a heart for the game,
+            and a future full of possibilities.
+            Every great journey starts with a dream.
+        </p>
+
+        <a class="btn" href="#message">Read Your Message ↓</a>
+    </div>
+
+    <div class="hero-image">
+        <img src="samuel2.jpg.png"
+             alt="Samuel Yitayal holding his trophy">
+    </div>
+</header>
+
+<section id="about">
+    <h2 class="section-title">More Than Football ⚽</h2>
+
+    <p class="section-subtitle">
+        Celebrating dedication, teamwork, achievement, and ambition.
+    </p>
+
+    <div class="about">
+        <div class="card">
+            <h3>🏆 A Moment of Achievement</h3>
+            <p>
+                Every trophy tells a story of effort,
+                determination, and unforgettable moments.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🔥 The Football Spirit</h3>
+            <p>
+                Keep learning, keep improving, and keep giving
+                your best. The strongest players never stop growing.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🤝 Teamwork</h3>
+            <p>
+                Football is more than an individual game.
+                Friendship, trust, and teamwork make every
+                achievement special.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🌟 A Bigger Future</h3>
+            <p>
+                There are always new goals to chase
+                and new heights to reach.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section id="gallery">
+    <h2 class="section-title">Moments on the Journey</h2>
+
+    <p class="section-subtitle">
+        Memories, achievements, and the love of the game.
+    </p>
+
+    <div class="gallery">
+        <img src="samuel1.jpg.png"
+             alt="Samuel playing football">
+
+        <img src="samuel3.jpg.png"
+             alt="Samuel and teammates celebrating">
+
+        <img src="samuel4.jpg.png"
+             alt="Samuel's football team">
+    </div>
+</section>
+
+<section id="message">
+    <div class="message">
+        <div class="tag">A PERSONAL MESSAGE FOR YOU</div>
+
+        <h2>Your Future Has No Limits</h2>
+
+        <p>
+            Samuel, from the days when you taught me in
+            elementary school to the football journey you
+            are pursuing today, I am proud to see your
+            growth and achievements.
+            <br><br>
+
+            I hope your future takes you to greater heights,
+            opens doors to incredible opportunities, and
+            brings you success beyond your dreams. Keep
+            believing in yourself, keep working hard, and
+            never stop chasing greatness.
+            <br><br>
+
+            May every challenge make you stronger, every
+            victory inspire you, and every new season bring
+            you closer to your biggest dreams. Your best
+            days are still ahead of you!
+        </p>
+
+        <div class="signature">
+            Keep dreaming. Keep fighting. Make history. 💚⚽
+        </div>
+    </div>
+</section>
+
+<footer>
+    Made with ❤️ for <span>Samuel Yitayal</span>
+    <br>
+    Believe in the journey. The future is yours.
+</footer>
+
+</body>
+</html>
